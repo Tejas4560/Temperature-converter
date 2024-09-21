@@ -15,15 +15,24 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly more opacity */
+    padding: 30px; /* Larger padding */
+    border-radius: 15px; /* Softer edges */
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #333;
+    animation: fadeInDown 1s ease;
 }
 
 .converter {
@@ -34,22 +43,41 @@ h1 {
 
 .converter input {
     margin: 10px 0;
-    padding: 10px;
-    width: 200px;
+    padding: 15px;
+    width: 220px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.converter input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .converter button {
     margin: 10px 0;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Rounded buttons */
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .converter button:hover {
     background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
